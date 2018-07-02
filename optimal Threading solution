@@ -1,0 +1,25 @@
+import time
+import threading
+
+def printName(name):
+    for i in range(5):
+        time.sleep(2)
+        print (name)
+        print (name)
+
+
+arr = ('Devesh','Jaiswal')
+
+t = time.time()
+
+t1 = threading.Thread(target = printName, args = (arr[0], ))
+t2 = threading.Thread(target = printName, args = (arr[1], ))
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+print ("done in : ", time.time()-t)
+print ("DONE!!!!!!")

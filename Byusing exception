@@ -1,0 +1,28 @@
+import time
+import threading
+
+def printName(firstName,lastName):
+    for i in range(5):
+        time.sleep(2)
+        print (firstName)
+        print (lastName)
+
+
+arr = ('Devesh','Jaiswal')
+arr1 = ('Jhon', 'Miller')
+
+t = time.time()
+try:
+    t1 = threading.Thread(target = printName, args = (arr[0],arr[1] ))
+    t2 = threading.Thread(target = printName, args = (arr1[0],arr1[1] ))
+except:
+    print("error")
+else:
+    t1.start()
+    t2.start()
+finally:
+    t1.join()
+    t2.join()
+
+print ("done in : ", time.time()-t)
+print ("DONE!!!!!!")

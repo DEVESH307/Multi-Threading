@@ -15,6 +15,7 @@ def lastName(name):
         print (name[1])
         print (name[1])
 
+#create a name array
 arr = ['Devesh','Jaiswal']
 
 t = time.time()
